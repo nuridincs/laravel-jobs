@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'LoginController@index');
-Route::get('/list-jobs', 'JobsController@index');
-Route::get('/detail-jobs/{id}', 'JobsController@detailJobs');
-Route::get('/search-jobs', 'JobsController@searchJobs');
+Route::get('/do-login', 'LoginController@doLogin');
+Route::get('/do-logout', 'LoginController@doLogout');
+
+Route::group(['middleware' => 'checkuser'], function () {
+  Route::get('/list-jobs', 'JobsController@index');
+  Route::get('/detail-jobs/{id}', 'JobsController@detailJobs');
+  Route::get('/search-jobs', 'JobsController@searchJobs');
+});

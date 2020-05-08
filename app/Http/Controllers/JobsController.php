@@ -12,15 +12,16 @@ class JobsController extends Controller
     {
       $response = Http::get('https://jobs.github.com/positions.json');
       $data['jobs'] = $response->json();
+
       return view('jobs.index', $data);
     }
-
 
     public function detailJobs(Request $request)
     {
       $id = $request->id;
       $response = Http::get('https://jobs.github.com/positions/'.$id.'.json');
       $data['detailJobs'] = $response->json();
+
       return view('jobs.details', $data);
     }
 
@@ -31,7 +32,7 @@ class JobsController extends Controller
       $response = Http::get('https://jobs.github.com/positions.json?'.$searchParam);
       $data['jobs'] = $response->json();
       $data['search'] = true;
-      // dd($data);
+
       return view('jobs.index', $data);
     }
 }

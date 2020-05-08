@@ -1,9 +1,18 @@
 @extends('layouts.app')
 <div class="header py-2">
   <div class="container">
-    <h3>
-      <span><b>Github</b></span> Jobs
-    </h3>
+    <div class="row d-flex align-items-center">
+      <div class="col">
+        <h3>
+          <span><b>Github</b></span> Jobs
+        </h3>
+      </div>
+      <div class="col text-right">
+        <span class="text-white">Hi {{ Session::get('name') }}</span>
+        |
+        <a href="/do-logout" class="text-white">Logout</a>
+      </div>
+    </div>
   </div>
 </div>
 <div class="container">

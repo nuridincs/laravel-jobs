@@ -1,0 +1,23 @@
+.bottom-line {
+  border-bottom: 1px solid grey;
+}
+
+.title{
+  color: #2787c2;
+  font-weight: bold;
+}
+
+.type {
+  color: #289a00;
+  font-weight: bold;
+}
+
+.fit-img {
+  width: 100%;
+  height: 230px;
+}
+
+.header {
+  background-color: #2b7fc3;
+  color: white;
+}
